@@ -1,0 +1,24 @@
+<section class="card register">
+  <form name="myform" novalidate
+  ng-submit = "register()">
+    <div class="textintro">
+      <h1>Register</h1>
+      <p class = "message"  ng-show = "message">{{message}}</p>
+    </div>
+    <fieldset>
+      <input type="text" name="firstname" placeholder="First Name" ng-model ="user.firstname">
+      <input type="text" name="lastname" placeholder="Last Name" ng-model ="user.lastname">
+      <input type="email" name="email" placeholder="Email" ng-model = "user.email">
+      <p class = "error validationerror" ng-show = "myform.email.$invalid && myform.email.$touched">
+        Must be a valid email
+      </p>
+      <input type="password" name="password" placeholder="Password" ng-model = "user.password">>
+      <p class = "error validationerror" ng-show = "myform.password.$invalid && myform.password.$touched">
+        Password is required
+      </p>
+    </fieldset>
+
+    <button type="submit" class="btn" ng-disabled = "myform.$invaild">Register</button>
+    <p> Go back to <a ng-href="#/login">login</a></p>
+  </form>
+</section>
